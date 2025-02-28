@@ -1,32 +1,28 @@
 import "./App.css";
 import Section from "./components/Section.tsx";
 import {BienvenueAventurier} from "./components/BienvenueAventurier.tsx";
+import {Inventoria} from "./components/Inventoria.tsx";
+import {useState} from "react";
 
 function App() {
+  const [isInventoriaOpen, setInventoriaOpen] = useState(false);
   return (
     <div className="container p-5 mb-4 bg-body-tertiary rounded-3">
       <Section id="exercice1">
         <h1>Boutique d'Archibald le Sorcier 🧙‍♂️</h1>
         <BienvenueAventurier id="exercice1.2" >
           <p>
-            Bienvenue <b>Aventurier</b>, ici vous pouvez acheter diverses
-            <u>potions magiques</u> pour vos aventures !
+            Bienvenue <b>Aventurier</b>, ici vous pouvez acheter diverses &nbsp;
+             <u>potions magiques</u> pour vos aventures !
           </p>
         </BienvenueAventurier>
       </Section>
 
       <section id="exercice2" className="my-5">
         <h2>Inventoria</h2>
-
-        <button className="btn btn-primary">Ouvrir Inventoria</button>
-
-        <div className="row mt-5">
-          <ul className="list-group list-group-horizontal flex-wrap">
-            <li className="list-group-item list-group-item-info">
-              Inventoria est pour le moment vide ⛺
-            </li>
-          </ul>
-        </div>
+        <button className="btn btn-primary" onClick={() => setInventoriaOpen(!isInventoriaOpen)}>
+          {isInventoriaOpen ? "Fermer Inventoria" : "Ouvrir Inventoria"}
+          {isInventoriaOpen && <Inventoria />}</button>
       </section>
 
       <section id="exercice3" className="my-5">
