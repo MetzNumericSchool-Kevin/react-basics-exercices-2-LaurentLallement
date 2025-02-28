@@ -1,15 +1,16 @@
 import "./App.css";
+import Section from "./components/Section.tsx";
 
 function App() {
   return (
     <div className="container p-5 mb-4 bg-body-tertiary rounded-3">
-      <section id="exercice1" className="my-5">
+      <Section id="exercice1">
         <h1>Boutique d'Archibald le Sorcier (bis repetita) 🧙‍♂️</h1>
         <p>
           Bienvenue Aventurier, ici vous pouvez acheter diverses potions
           magiques pour vos aventures !
         </p>
-      </section>
+      </Section>
 
       <section id="exercice2" className="my-5">
         <h2>Inventoria</h2>
