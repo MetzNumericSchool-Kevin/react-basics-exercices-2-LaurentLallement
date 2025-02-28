@@ -3,6 +3,7 @@ import Section from "./components/Section.tsx";
 import {BienvenueAventurier} from "./components/BienvenueAventurier.tsx";
 import {Inventoria} from "./components/Inventoria.tsx";
 import {useState} from "react";
+import potions from "./data/potion.ts";
 
 function App() {
   const [isInventoriaOpen, setInventoriaOpen] = useState(false);
@@ -26,8 +27,12 @@ function App() {
       </section>
 
       <section id="exercice3" className="my-5">
-        <h2 className="mb-5">Boutique de potion</h2>
-
+        <h2 className="mb-5">Boutique de potions</h2>
+        <ul>
+          {potions.map((potion, index) => (
+              <li key={index}>{potion} </li>
+          ))}
+        </ul>
         <div className="row row-cols-1 row-cols-md-4 g-4">
           <div className="card col border text-bg-dark bg-dark">
             <div className="card-body">Blabla</div>
